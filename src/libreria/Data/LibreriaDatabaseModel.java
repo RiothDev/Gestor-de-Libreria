@@ -47,7 +47,6 @@ public class LibreriaDatabaseModel extends DefaultDatabaseModel {
             return usersMap;
 
         } catch(SQLException e) {
-            e.printStackTrace();
             System.out.println("Error al intentar conseguir los datos.");
 
             Map<Integer, Map<String, Object>> map = new HashMap<>();
