@@ -32,14 +32,17 @@ public class LibreriaDatabaseModel extends DefaultDatabaseModel {
 
             while(resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String autor = resultSet.getString("autor");
-                String titulo = resultSet.getString("titulo");
-                String ISBN = resultSet.getString("ISBN");
-
+                
                 Map<String, Object> newUser = new HashMap<>();
-                newUser.put("autor", autor);
-                newUser.put("titulo", titulo);
-                newUser.put("ISBN", ISBN);
+                newUser.put("autor", resultSet.getString("autor"));
+                newUser.put("titulo", resultSet.getString("titulo"));
+                newUser.put("ISBN", resultSet.getString("ISBN"));
+                newUser.put("noLibro", Integer.toString(resultSet.getInt("noLibro")));
+                newUser.put("edicion", resultSet.getString("edicion"));
+                newUser.put("cantidad", Integer.toString(resultSet.getInt("cantidad")));
+                newUser.put("prestados", Integer.toString(resultSet.getInt("prestados")));
+                newUser.put("editorial", resultSet.getString("editorial"));
+                newUser.put("categoria", resultSet.getString("categoria"));
                 
                 usersMap.put(id, newUser);
             }
@@ -75,20 +78,16 @@ public class LibreriaDatabaseModel extends DefaultDatabaseModel {
 
             while(resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String usuario = resultSet.getString("usuario");
-                String nombre = resultSet.getString("nombre");
-                String pwd = resultSet.getString("pwd");
-                String especialidad = resultSet.getString("especialidad");
-                int grado = resultSet.getInt("grado");
-                String grupo = resultSet.getString("grupo");
-
+                
                 Map<String, Object> newUser = new HashMap<>();
-                newUser.put("usuario", usuario);
-                newUser.put("pwd", pwd);
-                newUser.put("especialidad", especialidad);
-                newUser.put("grado", grado);
-                newUser.put("grupo", grupo);
-                newUser.put("nombre", nombre);
+                newUser.put("usuario", resultSet.getString("usuario"));
+                newUser.put("pwd", resultSet.getString("pwd"));
+                newUser.put("especialidad", resultSet.getString("especialidad"));
+                newUser.put("grado", Integer.toString(resultSet.getInt("grado")));
+                newUser.put("grupo", resultSet.getString("grupo"));
+                newUser.put("nombre", resultSet.getString("nombre"));
+                newUser.put("credencial", resultSet.getString("credencial"));
+                newUser.put("numero", Integer.toString(resultSet.getInt("numero")));
 
                 usersMap.put(id, newUser);
             }

@@ -37,6 +37,10 @@ public class Usuarios extends javax.swing.JFrame {
         especialidadField = new javax.swing.JTextField();
         gradoField = new javax.swing.JTextField();
         grupoField = new javax.swing.JTextField();
+        grupoTxt1 = new javax.swing.JLabel();
+        numField = new javax.swing.JTextField();
+        grupoTxt2 = new javax.swing.JLabel();
+        credencialField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -88,6 +92,18 @@ public class Usuarios extends javax.swing.JFrame {
 
         grupoField.setEditable(false);
 
+        grupoTxt1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        grupoTxt1.setForeground(new java.awt.Color(255, 255, 255));
+        grupoTxt1.setText("Número:");
+
+        numField.setEditable(false);
+
+        grupoTxt2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        grupoTxt2.setForeground(new java.awt.Color(255, 255, 255));
+        grupoTxt2.setText("Credencial:");
+
+        credencialField.setEditable(false);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -114,7 +130,15 @@ public class Usuarios extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(gradoTxt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gradoField)))
+                        .addComponent(gradoField))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(grupoTxt1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(numField))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(grupoTxt2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(credencialField)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -140,6 +164,14 @@ public class Usuarios extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(grupoTxt)
                     .addComponent(grupoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(grupoTxt1)
+                    .addComponent(numField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(grupoTxt2)
+                    .addComponent(credencialField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -248,7 +280,7 @@ public class Usuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -293,9 +325,11 @@ public class Usuarios extends javax.swing.JFrame {
                especialidadField.setText(result.getString("especialidad"));
                gradoField.setText(Integer.toString(result.getInt("grado")));
                grupoField.setText(result.getString("grupo"));
+               numField.setText(Integer.toString(result.getInt("numero")));
+               credencialField.setText(result.getString("credencial"));
            }
             
-        } catch(Exception e) {
+        } catch(SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al intentar conseguir la información del usuario.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -317,12 +351,15 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField credencialField;
     private javax.swing.JTextField especialidadField;
     private javax.swing.JLabel especialidadTxt;
     private javax.swing.JTextField gradoField;
     private javax.swing.JLabel gradoTxt;
     private javax.swing.JTextField grupoField;
     private javax.swing.JLabel grupoTxt;
+    private javax.swing.JLabel grupoTxt1;
+    private javax.swing.JLabel grupoTxt2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -336,6 +373,7 @@ public class Usuarios extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nombreField;
     private javax.swing.JLabel nombreTxt;
+    private javax.swing.JTextField numField;
     private javax.swing.JTextField usuarioField;
     private javax.swing.JLabel usuarioTxt;
     // End of variables declaration//GEN-END:variables
