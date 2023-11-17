@@ -56,7 +56,6 @@ public class Libros extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,7 +108,7 @@ public class Libros extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Num. Libro:");
+        jLabel8.setText("No. Libro:");
 
         numLibroField.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
@@ -159,33 +158,29 @@ public class Libros extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                        .addComponent(autorField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(prestadoTxt)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tituloField)
-                                    .addComponent(ISBNField)
-                                    .addComponent(numLibroField)
-                                    .addComponent(edicionField)
-                                    .addComponent(cantidadField)
-                                    .addComponent(editorialField)
-                                    .addComponent(categoriaBox, 0, 132, Short.MAX_VALUE)))
-                            .addComponent(prestadoTxt))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(autorField, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tituloField)
+                                .addComponent(ISBNField)
+                                .addComponent(numLibroField)
+                                .addComponent(edicionField)
+                                .addComponent(cantidadField)
+                                .addComponent(editorialField)
+                                .addComponent(categoriaBox, 0, 132, Short.MAX_VALUE)))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,6 +244,8 @@ public class Libros extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(153, 153, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(54, 54, 54));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -260,6 +257,11 @@ public class Libros extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -334,17 +336,6 @@ public class Libros extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton4.setBackground(new java.awt.Color(153, 153, 255));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Cargar libro");
-        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jButton5.setBackground(new java.awt.Color(102, 102, 255));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -363,26 +354,28 @@ public class Libros extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(jLabel1))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -406,13 +399,10 @@ public class Libros extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -490,10 +480,36 @@ public class Libros extends javax.swing.JFrame {
         return !(autorField.getText().equals("") || numLibroField.getText().equals("") || edicionField.getText().equals("") || cantidadField.getText().equals("") || editorialField.getText().equals("") || categoriaBox.getSelectedItem().equals("") || tituloField.getText().equals("") || ISBNField.getText().equals(""));
     }
     
+    public boolean validateNoLibro(int noLibro) {
+        try { 
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE noLibro = ?");
+            statement.setInt(1, noLibro);
+            
+            ResultSet result = statement.executeQuery();
+            
+            return !(result.next());
+            
+        } catch(SQLException e) {
+            return false;
+        }
+    }
+    
+    public void clear() {
+        autorField.setText("");
+        tituloField.setText("");
+        ISBNField.setText("");
+        numLibroField.setText("");
+        edicionField.setText("");
+        cantidadField.setText("");
+        editorialField.setText("");
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         try {
-           if(validateLibro()) {
+            System.out.println(validateNoLibro(Integer.parseInt(numLibroField.getText())));
+            
+            if(validateLibro() && validateNoLibro(Integer.parseInt(numLibroField.getText()))) {
                 String autor = autorField.getText();
                 String titulo = tituloField.getText();
                 String ISBN = ISBNField.getText();
@@ -518,72 +534,72 @@ public class Libros extends javax.swing.JFrame {
             
                 JOptionPane.showMessageDialog(null, "Se ha agregado el libro a la base de datos correctamente.");
                 renderLibros();   
-           } else {
-               JOptionPane.showMessageDialog(null, "Los campos deben llenarse correctamente.");
-           }
+                
+                clear();
+            } else {
+               JOptionPane.showMessageDialog(null, "Hubo un error al intentar guardar los campos en la base de datos, compruebe su información.");
+            }
             
         } catch(SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al intentar crear el libro.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
-        try {
-            DefaultTableModel TABLE = (DefaultTableModel) jTable1.getModel();
-            
-            Object[] contentRow = new Object[TABLE.getColumnCount()];
-            
-            for(int column = 0; column < TABLE.getColumnCount(); column++) {
-                contentRow[column] = TABLE.getValueAt(jTable1.getSelectedRow(), column);
-            }
-            
-            String nombre = contentRow[3].toString();
-            
-            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE noLibro = ?");
-            statement.setString(1, nombre);
-            
-            ResultSet result = statement.executeQuery();
-            
-            while(result.next()) {
-                autorField.setText(result.getString("autor"));
-                tituloField.setText(result.getString("titulo"));
-                ISBNField.setText(result.getString("ISBN"));
-                numLibroField.setText(Integer.toString(result.getInt("noLibro")));
-                edicionField.setText(result.getString("edicion"));
-                editorialField.setText(result.getString("editorial"));
-                cantidadField.setText(result.getString("prestados") + " / " + result.getString("cantidad"));
-                
-                if(result.getInt("cantidad") > 0) {
-                    prestadoTxt.setText("Estado: Disponible");
-                    prestadoTxt.setForeground(Color.green);
-                } else {
-                    prestadoTxt.setText("Estado: No Disponible");
-                    prestadoTxt.setForeground(Color.red);
-                }
-            }   
-                
-        } catch(SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al intentar conseguir el libro.");
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         try {
             if(jTextField4.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "El campo debe llenarse con el nombre del libro, su número, su categoría o la ISBN.");
+                JOptionPane.showMessageDialog(null, "El campo debe llenarse con el nombre del libro, su número, su autor, su categoría o la ISBN.");
                 
             } else {
                 String nombre = jTextField4.getText();            
             
-                PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE ISBN LIKE ? OR titulo LIKE ? OR noLibro LIKE ? OR categoria LIKE ?");
+                PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE ISBN LIKE ? OR titulo LIKE ? OR noLibro LIKE ? OR categoria LIKE ? OR autor LIKE ?");
                 statement.setString(1, "%" + nombre + "%");
                 statement.setString(2, "%" + nombre + "%");
-                statement.setInt(3, Integer.parseInt(nombre));
-                statement.setString(4, nombre);
+                statement.setString(3, "%" + nombre + "%");
+                statement.setString(4, "%" + nombre + "%");
+                statement.setString(5, "%" + nombre + "%");
             
                 ResultSet resultSet = statement.executeQuery();
+                DefaultTableModel TABLE = new DefaultTableModel();
+                
+                TABLE.addColumn("Título");
+                TABLE.addColumn("Autor");
+                TABLE.addColumn("Categoría");
+                TABLE.addColumn("No. Libro");
+                
+                Map<Integer, Map<String, Object>> libros = new HashMap<>();
+
+                while(resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                
+                    Map<String, Object> newLibro = new HashMap<>();
+                    newLibro.put("autor", resultSet.getString("autor"));
+                    newLibro.put("titulo", resultSet.getString("titulo"));
+                    newLibro.put("ISBN", resultSet.getString("ISBN"));
+                    newLibro.put("noLibro", Integer.toString(resultSet.getInt("noLibro")));
+                    newLibro.put("edicion", resultSet.getString("edicion"));
+                    newLibro.put("cantidad", Integer.toString(resultSet.getInt("cantidad")));
+                    newLibro.put("prestados", Integer.toString(resultSet.getInt("prestados")));
+                    newLibro.put("editorial", resultSet.getString("editorial"));
+                    newLibro.put("categoria", resultSet.getString("categoria"));
+
+                    libros.put(id, newLibro);
+                }
+                
+                for (Map<String, Object> libro : libros.values()) {
+                    String data[] = new String[4];
+            
+                    data[0] = libro.get("titulo").toString();
+                    data[1] = libro.get("autor").toString();
+                    data[2] = libro.get("categoria").toString();
+                    data[3] = libro.get("noLibro").toString();
+            
+                    TABLE.addRow(data);
+                }
+                
+                jTable1.setModel(TABLE);
             }
             
         } catch(SQLException e) {
@@ -603,7 +619,7 @@ public class Libros extends javax.swing.JFrame {
                 statement.executeUpdate();
                 renderLibros();
                 
-                JOptionPane.showMessageDialog(null, "El libro se ha removido correctamente.");
+                clear();
                 
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos deben llenarse correctamente.");
@@ -634,6 +650,47 @@ public class Libros extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cantidadFieldActionPerformed
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+       try {
+            DefaultTableModel TABLE = (DefaultTableModel) jTable1.getModel();
+            
+            Object[] contentRow = new Object[TABLE.getColumnCount()];
+            
+            for(int column = 0; column < TABLE.getColumnCount(); column++) {
+                contentRow[column] = TABLE.getValueAt(jTable1.getSelectedRow(), column);
+            }
+            
+            String nombre = contentRow[3].toString();
+            
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE noLibro = ?");
+            statement.setString(1, nombre);
+            
+            ResultSet result = statement.executeQuery();
+            
+            while(result.next()) {
+                autorField.setText(result.getString("autor"));
+                tituloField.setText(result.getString("titulo"));
+                ISBNField.setText(result.getString("ISBN"));
+                numLibroField.setText(Integer.toString(result.getInt("noLibro")));
+                edicionField.setText(result.getString("edicion"));
+                editorialField.setText(result.getString("editorial"));
+                cantidadField.setText(result.getString("prestados"));
+                
+                if(result.getInt("cantidad") > 0) {
+                    prestadoTxt.setText("Estado: Disponible (" + result.getString("prestados") + " / " + result.getString("cantidad") + ")");
+                    prestadoTxt.setForeground(Color.green);
+                } else {
+                    prestadoTxt.setText("Estado: No Disponible");
+                    prestadoTxt.setForeground(Color.red);
+                }
+            }   
+                
+        } catch(SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al intentar conseguir el libro.");
+        }
+        
+    }//GEN-LAST:event_jTable1MouseClicked
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -652,7 +709,6 @@ public class Libros extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

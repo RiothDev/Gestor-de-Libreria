@@ -378,6 +378,17 @@ public class Prestamo extends javax.swing.JFrame {
         }
     }
     
+    public void renderLibros() {
+        Map<Integer, Map<String, Object>> libros = model.getLibrosData();
+        
+        JLIST.removeAllElements();
+        
+        for(Map<String, Object> libro : libros.values()) {
+            JLIST.addElement(libro.get("titulo"));
+            jList1.setModel(JLIST);
+        }
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         Sesion sesion = new Sesion(model);
@@ -422,17 +433,6 @@ public class Prestamo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al intentar crear el préstamo");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    public void renderLibros() {
-        Map<Integer, Map<String, Object>> libros = model.getLibrosData();
-        
-        JLIST.removeAllElements();
-        
-        for(Map<String, Object> libro : libros.values()) {
-            JLIST.addElement(libro.get("titulo"));
-            jList1.setModel(JLIST);
-        }
-    }
     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
