@@ -14,7 +14,7 @@ CREATE TABLE usuarios (
     grupo VARCHAR(2),
     
     PRIMARY KEY(id)
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE prestamos (
     id INT AUTO_INCREMENT,
@@ -36,7 +36,7 @@ CREATE TABLE categorias (
     numCategoria INT,
     
     PRIMARY KEY(id)
-);
+) ENGINE = InnoDB;
 
 CREATE TABLE libros (
     id INT AUTO_INCREMENT,
@@ -51,4 +51,4 @@ CREATE TABLE libros (
     categoria VARCHAR(255),
     
     PRIMARY KEY(id)
-);
+) ENGINE = InnoDB;

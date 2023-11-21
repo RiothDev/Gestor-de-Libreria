@@ -8,10 +8,9 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 
 public class Prestamo extends javax.swing.JFrame {
-    DefaultListModel JLIST = new DefaultListModel();
-    
     protected static String username;
     protected static LibreriaDatabaseModel model;
     
@@ -49,10 +48,9 @@ public class Prestamo extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -210,7 +208,29 @@ public class Prestamo extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(153, 153, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jScrollPane1.setViewportView(jList1);
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTable1KeyPressed(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -218,31 +238,20 @@ public class Prestamo extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Menú de libros");
-
-        jButton3.setBackground(new java.awt.Color(153, 153, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Añadir al préstamo");
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         jButton4.setBackground(new java.awt.Color(153, 153, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -258,7 +267,7 @@ public class Prestamo extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(153, 153, 255));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Reiniciar");
+        jButton5.setText("Resetear");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,21 +285,20 @@ public class Prestamo extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,20 +314,18 @@ public class Prestamo extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -328,8 +334,8 @@ public class Prestamo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,7 +349,9 @@ public class Prestamo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,12 +389,26 @@ public class Prestamo extends javax.swing.JFrame {
     public void renderLibros() {
         Map<Integer, Map<String, Object>> libros = model.getLibrosData();
         
-        JLIST.removeAllElements();
+        DefaultTableModel TABLE = new DefaultTableModel();
         
-        for(Map<String, Object> libro : libros.values()) {
-            JLIST.addElement(libro.get("titulo"));
-            jList1.setModel(JLIST);
+        TABLE.addColumn("Título");
+        TABLE.addColumn("Autor");
+        TABLE.addColumn("Categoría");
+        TABLE.addColumn("No. Libro");
+        
+        for (Map<String, Object> libro : libros.values()) {
+            String data[] = new String[4];
+            
+            data[0] = libro.get("titulo").toString();
+            data[1] = libro.get("autor").toString();
+            data[2] = libro.get("categoria").toString();
+            data[3] = libro.get("noLibro").toString();
+            
+            TABLE.addRow(data);
         }
+        
+        jTable1.setModel(TABLE);
+        jTable1.setDefaultEditor(Object.class, null);
     }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -400,23 +422,22 @@ public class Prestamo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         try {
-            if(validateFields() && findBook() && estadoTxt.getText().equals("Estado: Disponible")) {
-                PreparedStatement statement = model.getConnection().prepareStatement("INSERT INTO prestamos (autor, titulo, ISBN, creador, activo, fecha) VALUES (?, ?, ?, ?, ?, ?)");
+            if(validateFields() && findBook() && estadoTxt.getText().startsWith("Estado: Disponible")) {
+                PreparedStatement statement = model.getConnection().prepareStatement("INSERT INTO prestamos (autor, titulo, ISBN, creador, activo, fecha, noLibro, categoria) VALUES (?, ?, n?, ?, ?, ?, ?, ?)");
                 statement.setString(1, autorField.getText());
                 statement.setString(2, tituloField.getText());
                 statement.setString(3, ISBNField.getText());
                 statement.setString(4, username);
                 statement.setInt(5, 1);
                 statement.setString(6, LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+                statement.setString(7, NoLibroField.getText());
+                statement.setString(8, categoriaField.getText());
                 
                 statement.executeUpdate();
                 JOptionPane.showMessageDialog(null, "El préstamo se agregó correctamente.");
                 
-                PreparedStatement disable = model.getConnection().prepareStatement("UPDATE libros SET prestado = ? WHERE autor = ? AND titulo = ? AND ISBN = ?");
-                disable.setInt(1, 1);
-                disable.setString(2, autorField.getText());
-                disable.setString(3, tituloField.getText());
-                disable.setString(4, ISBNField.getText());
+                PreparedStatement disable = model.getConnection().prepareStatement("UPDATE libros SET prestados = prestados - 1 WHERE noLibro = ?");
+                disable.setString(1, NoLibroField.getText());
                 
                 disable.executeUpdate();
                         
@@ -430,6 +451,7 @@ public class Prestamo extends javax.swing.JFrame {
             }  
             
         } catch(SQLException e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al intentar crear el préstamo");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -437,39 +459,60 @@ public class Prestamo extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
         try {
-            String inputString = JOptionPane.showInputDialog("Ingrese el nombre, autor o ISBN de su libro:");
+            String inputString = JOptionPane.showInputDialog("Ingrese el nombre, categoría, número, autor o ISBN de su libro:");
             
             PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE ISBN LIKE ? OR titulo LIKE ? OR autor LIKE ? OR categoria LIKE ? OR noLibro LIKE ?");
             statement.setString(1, inputString);
             statement.setString(2, inputString);
             statement.setString(3, inputString);
             statement.setString(4, inputString);
-            statement.setInt(5, Integer.parseInt(inputString));
+            statement.setString(5, inputString);
             
             ResultSet result = statement.executeQuery();
             
-            JLIST.removeAllElements();
+            DefaultTableModel TABLE = new DefaultTableModel();
             
+            TABLE.addColumn("Título");
+            TABLE.addColumn("Autor");
+            TABLE.addColumn("Categoría");
+            TABLE.addColumn("No. Libro");
+
             while(result.next()) {
-                JLIST.addElement(result.getString("titulo"));
-            }
+                String data[] = new String[4];
             
+                data[0] = result.getString("titulo");
+                data[1] = result.getString("autor");
+                data[2] = result.getString("categoria");
+                data[3] = result.getString("noLibro");
+            
+                TABLE.addRow(data);
+                
+            }
+        
+            jTable1.setModel(TABLE);
+            jTable1.setDefaultEditor(Object.class, null);
+             
         } catch(SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al intentar conseguir los libros relacionados.");
             
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jTable1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyPressed
 
-        renderLibros();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jTable1KeyPressed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
 
         try {
-            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE titulo = ?");
-            statement.setString(1, jList1.getSelectedValue());
+            Object[] contentRow = new Object[jTable1.getColumnCount()];
+            
+            for(int column = 0; column < jTable1.getColumnCount(); column++) {
+                contentRow[column] = jTable1.getValueAt(jTable1.getSelectedRow(), column);
+            }
+            
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM libros WHERE noLibro = ?");
+            statement.setString(1, contentRow[3].toString());
             
             ResultSet result = statement.executeQuery();
             
@@ -477,24 +520,29 @@ public class Prestamo extends javax.swing.JFrame {
                 autorField.setText(result.getString("autor"));
                 tituloField.setText(result.getString("titulo"));
                 ISBNField.setText(result.getString("ISBN"));
-                NoLibroField.setText(Integer.toString(result.getInt("noLibro")));
+                NoLibroField.setText(result.getString("noLibro"));
                 categoriaField.setText(result.getString("categoria"));
                 EditorialField.setText(result.getString("editorial"));
                 
-                
-                if(result.getInt("prestados") < result.getInt("cantidad")) {
-                    estadoTxt.setText("Estado: Disponible");
+                if(result.getInt("cantidad") > 0) {
+                    estadoTxt.setText("Estado: Disponible (" + result.getString("prestados") + " / " + result.getString("cantidad") + ")");
                     estadoTxt.setForeground(Color.green);
                 } else {
-                    estadoTxt.setText("Estado: Prestado");
+                    estadoTxt.setText("Estado: No Disponible");
                     estadoTxt.setForeground(Color.red);
                 }
             }
             
-        } catch(Exception e) {
+        } catch(SQLException e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al intentar conseguir el libro.");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        renderLibros();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -513,7 +561,6 @@ public class Prestamo extends javax.swing.JFrame {
     private javax.swing.JLabel estadoTxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -525,13 +572,13 @@ public class Prestamo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField tituloField;
     // End of variables declaration//GEN-END:variables
 }

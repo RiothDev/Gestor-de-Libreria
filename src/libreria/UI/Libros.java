@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
 
 public class Libros extends javax.swing.JFrame {
     protected static LibreriaDatabaseModel model;
@@ -474,6 +475,7 @@ public class Libros extends javax.swing.JFrame {
         }
         
         jTable1.setModel(TABLE);
+        jTable1.setDefaultEditor(Object.class, null);
     }
     
     public boolean validateLibro() {
@@ -504,11 +506,28 @@ public class Libros extends javax.swing.JFrame {
         editorialField.setText("");
     }
     
+    public String getCategoria(String categoria) {
+        try {
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM categorias WHERE categoria = ?");
+            statement.setString(1, categoria);
+            
+            ResultSet result = statement.executeQuery();
+            
+            if(result.next()) {
+                return categoria + " - " + result.getString("numCategoria");
+            }
+            
+            return new String();
+            
+        } catch(SQLException e) {
+            e.printStackTrace();
+            return new String();
+        }
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         try {
-            System.out.println(validateNoLibro(Integer.parseInt(numLibroField.getText())));
-            
             if(validateLibro() && validateNoLibro(Integer.parseInt(numLibroField.getText()))) {
                 String autor = autorField.getText();
                 String titulo = tituloField.getText();
@@ -600,6 +619,7 @@ public class Libros extends javax.swing.JFrame {
                 }
                 
                 jTable1.setModel(TABLE);
+                jTable1.setDefaultEditor(Object.class, null);
             }
             
         } catch(SQLException e) {
@@ -675,6 +695,7 @@ public class Libros extends javax.swing.JFrame {
                 edicionField.setText(result.getString("edicion"));
                 editorialField.setText(result.getString("editorial"));
                 cantidadField.setText(result.getString("prestados"));
+                categoriaBox.setSelectedItem(getCategoria(result.getString("categoria")));
                 
                 if(result.getInt("cantidad") > 0) {
                     prestadoTxt.setText("Estado: Disponible (" + result.getString("prestados") + " / " + result.getString("cantidad") + ")");
@@ -688,7 +709,6 @@ public class Libros extends javax.swing.JFrame {
         } catch(SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al intentar conseguir el libro.");
         }
-        
     }//GEN-LAST:event_jTable1MouseClicked
 
     public static void main(String args[]) {
