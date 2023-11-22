@@ -61,7 +61,7 @@ public class Usuarios extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios:");
 
-        jPanel4.setBackground(new java.awt.Color(35, 64, 75));
+        jPanel4.setBackground(new java.awt.Color(131, 165, 178));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         usuarioTxt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -184,7 +184,7 @@ public class Usuarios extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Usuario:");
 
-        jButton2.setBackground(new java.awt.Color(83, 107, 116));
+        jButton2.setBackground(new java.awt.Color(103, 131, 141));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Regresar");
@@ -213,7 +213,7 @@ public class Usuarios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setBackground(new java.awt.Color(35, 64, 75));
+        jButton1.setBackground(new java.awt.Color(103, 131, 141));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Editar");
@@ -224,7 +224,7 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(35, 64, 75));
+        jButton3.setBackground(new java.awt.Color(103, 131, 141));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Remover");
@@ -235,7 +235,7 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(35, 64, 75));
+        jButton4.setBackground(new java.awt.Color(103, 131, 141));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Encontrar usuario");

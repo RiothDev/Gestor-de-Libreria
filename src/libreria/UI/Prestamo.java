@@ -56,10 +56,10 @@ public class Prestamo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(35,64,75));
-        jPanel1.setForeground(new java.awt.Color(71,89,96));
+        jPanel1.setBackground(new java.awt.Color(35, 64, 75));
+        jPanel1.setForeground(new java.awt.Color(204, 204, 255));
 
-        jPanel2.setBackground(new java.awt.Color(71,89,96));
+        jPanel2.setBackground(new java.awt.Color(71, 89, 96));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -78,7 +78,7 @@ public class Prestamo extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Préstamo");
 
-        jPanel4.setBackground(new java.awt.Color(35,64,75));
+        jPanel4.setBackground(new java.awt.Color(131, 165, 178));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -183,7 +183,7 @@ public class Prestamo extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Información del libro");
 
-        jButton1.setBackground(new java.awt.Color(35,64,75));
+        jButton1.setBackground(new java.awt.Color(83, 107, 116));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Crear préstamo");
@@ -194,7 +194,7 @@ public class Prestamo extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(83,107,116));
+        jButton2.setBackground(new java.awt.Color(103, 131, 141));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Regresar");
@@ -205,7 +205,7 @@ public class Prestamo extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(35,64,75));
+        jPanel5.setBackground(new java.awt.Color(131, 165, 178));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -253,7 +253,7 @@ public class Prestamo extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Menú de libros");
 
-        jButton4.setBackground(new java.awt.Color(35,64,75));
+        jButton4.setBackground(new java.awt.Color(83, 107, 116));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Encontrar libro");
@@ -264,7 +264,7 @@ public class Prestamo extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(35,64,75));
+        jButton5.setBackground(new java.awt.Color(83, 107, 116));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Resetear");

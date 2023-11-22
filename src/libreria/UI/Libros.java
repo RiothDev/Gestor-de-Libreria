@@ -18,6 +18,8 @@ public class Libros extends javax.swing.JFrame {
         
         renderLibros();
         renderCategorias();
+        
+        getAmount();
     }
 
     @SuppressWarnings("unchecked")
@@ -58,6 +60,7 @@ public class Libros extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,7 +85,7 @@ public class Libros extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Libros");
 
-        jPanel4.setBackground(new java.awt.Color(35, 64, 75));
+        jPanel4.setBackground(new java.awt.Color(131, 165, 178));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -231,7 +234,7 @@ public class Libros extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Registro de libros:");
 
-        jButton1.setBackground(new java.awt.Color(35, 64, 75));
+        jButton1.setBackground(new java.awt.Color(83, 107, 116));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Crear libro");
@@ -242,7 +245,7 @@ public class Libros extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(35, 64, 75));
+        jPanel5.setBackground(new java.awt.Color(131, 165, 178));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -282,7 +285,7 @@ public class Libros extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        jButton2.setBackground(new java.awt.Color(35, 64, 75));
+        jButton2.setBackground(new java.awt.Color(83, 107, 116));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Remover libro");
@@ -293,14 +296,14 @@ public class Libros extends javax.swing.JFrame {
             }
         });
 
-        jPanel6.setBackground(new java.awt.Color(35, 64, 75));
+        jPanel6.setBackground(new java.awt.Color(131, 165, 178));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Búsqueda de libro");
 
-        jButton3.setBackground(new java.awt.Color(83, 107, 116));
+        jButton3.setBackground(new java.awt.Color(103, 131, 141));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Encontrar");
@@ -337,7 +340,7 @@ public class Libros extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton5.setBackground(new java.awt.Color(83, 107, 116));
+        jButton5.setBackground(new java.awt.Color(103, 131, 141));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Regresar");
@@ -347,6 +350,10 @@ public class Libros extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Cantidad de libros: 0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -371,12 +378,14 @@ public class Libros extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel6)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel13)
+                                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -400,7 +409,9 @@ public class Libros extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -450,6 +461,21 @@ public class Libros extends javax.swing.JFrame {
             
         } catch(SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al intentar conseguir las categorías.");
+        }
+    }
+    
+    public void getAmount() {
+        try {
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT COUNT(*) as total_filas FROM libros");
+            ResultSet result = statement.executeQuery();
+            
+            if(result.next()) {
+                jLabel13.setText("Cantidad de libros: " + Integer.toString(result.getInt("total_filas")));
+            }
+            
+        } catch(SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error");
         }
     }
     
@@ -554,7 +580,9 @@ public class Libros extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Se ha agregado el libro a la base de datos correctamente.");
                 renderLibros();   
                 
+                getAmount();
                 clear();
+                
             } else {
                JOptionPane.showMessageDialog(null, "Hubo un error al intentar guardar los campos en la base de datos, compruebe su información.");
             }
@@ -639,6 +667,7 @@ public class Libros extends javax.swing.JFrame {
                 statement.executeUpdate();
                 renderLibros();
                 
+                getAmount();
                 clear();
                 
             } else {
@@ -734,6 +763,7 @@ public class Libros extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
