@@ -7,7 +7,6 @@ import java.util.Map;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import javax.swing.DefaultListModel;
 import javax.swing.table.DefaultTableModel;
 
 public class Prestamo extends javax.swing.JFrame {

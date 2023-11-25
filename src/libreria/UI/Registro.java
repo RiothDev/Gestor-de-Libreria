@@ -5,6 +5,12 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Registro extends javax.swing.JFrame {
     protected static LibreriaDatabaseModel model;
@@ -13,6 +19,7 @@ public class Registro extends javax.swing.JFrame {
         model = dbModel;
         initComponents();
         
+        update();
         render();
     }
 
@@ -388,7 +395,7 @@ public class Registro extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -432,7 +439,7 @@ public class Registro extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(232, 232, 232))
+                .addGap(191, 191, 191))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -443,12 +450,35 @@ public class Registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void update() {
+        try {
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM prestamos");
+            ResultSet result = statement.executeQuery();
+            
+            while (result.next()) {
+                LocalDate date = LocalDate.parse(result.getString("fecha"));
+                LocalDate current = LocalDate.now();
+                
+                LocalDate weekDate = current.minusWeeks(1);
+                
+                if (date.isBefore(weekDate)) {
+                    PreparedStatement updateStatement = model.getConnection().prepareStatement("UPDATE prestamos SET activo = 0 WHERE id = ?");
+                    updateStatement.setString(1, result.getString("id"));
+                    updateStatement.executeUpdate();
+                }
+            }
+            
+        } catch(SQLException e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error al intentar checar el estado actual de los préstamos.");
+        }
+    }
+    
     public void render() {
         try {
             PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM prestamos");

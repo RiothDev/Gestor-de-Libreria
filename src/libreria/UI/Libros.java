@@ -7,7 +7,6 @@ import java.sql.*;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JTable;
 
 public class Libros extends javax.swing.JFrame {
     protected static LibreriaDatabaseModel model;
@@ -474,7 +473,6 @@ public class Libros extends javax.swing.JFrame {
             }
             
         } catch(SQLException e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error");
         }
     }
@@ -546,7 +544,6 @@ public class Libros extends javax.swing.JFrame {
             return new String();
             
         } catch(SQLException e) {
-            e.printStackTrace();
             return new String();
         }
     }
