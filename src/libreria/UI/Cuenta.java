@@ -3,6 +3,7 @@ package libreria.UI;
 import libreria.Data.LibreriaDatabaseModel;
 import javax.swing.JOptionPane;
 import java.sql.*;
+import java.util.Base64;
 
 public class Cuenta extends javax.swing.JFrame {
     protected static LibreriaDatabaseModel model;
@@ -280,7 +281,7 @@ public class Cuenta extends javax.swing.JFrame {
             if(validateFields()) {
                 PreparedStatement preparedStatement = model.getConnection().prepareStatement("INSERT INTO usuarios (usuario, pwd, nombre, especialidad, grado, grupo, numero, credencial) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                 preparedStatement.setString(1, usernameField.getText());
-                preparedStatement.setString(2, passwordField.getText());
+                preparedStatement.setString(2, Base64.getEncoder().encodeToString(passwordField.getText().getBytes()));
                 preparedStatement.setString(3, nombreField.getText());
                 preparedStatement.setString(4, especialidadField.getText());
                 preparedStatement.setInt(5, Character.getNumericValue(GradoYGrupoField.getText().charAt(0)));

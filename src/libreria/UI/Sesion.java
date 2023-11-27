@@ -3,6 +3,7 @@ package libreria.UI;
 import libreria.Data.LibreriaDatabaseModel;
 import java.util.*;
 import javax.swing.JOptionPane;
+import java.util.Base64;
 
 public class Sesion extends javax.swing.JFrame {
     protected static LibreriaDatabaseModel model;
@@ -188,7 +189,7 @@ public class Sesion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         String enteredUsername = jTextField1.getText();
-        char[] enteredPassword = jPasswordField1.getPassword();
+        char[] enteredPassword = Base64.getEncoder().encodeToString(String.valueOf(jPasswordField1.getPassword()).getBytes()).toCharArray();
 
         if (authenticateUser(enteredUsername, enteredPassword) ||  (enteredUsername.equals("admin") && new String(enteredPassword).equals("administrador"))) {
             if (enteredUsername.equals("admin")) {
