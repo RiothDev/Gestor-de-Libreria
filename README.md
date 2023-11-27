@@ -56,11 +56,11 @@ PASSWORD=Contraseña del equipo administrativo
 # 💻 Arquitectura de software:
 + **Sistema de cuentas:**
 
-![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/d26a3f4c-93a6-423d-ba1c-0964df0fc8e0)
+![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/2ae7b358-af08-4964-8dd2-792823f60a91)
 
 + **Sistema de libros:**
 
-![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/71d97706-092f-4989-83f4-9b6ccbce28d2)
+![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/d5e490cc-4a2e-4b94-af43-9b1521b4261b)
 
 # 🍃 Consideraciones Finales:
 
