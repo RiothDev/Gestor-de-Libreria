@@ -1,7 +1,7 @@
 # 📗 Gestor de Libreria
 > **Un programa para facilitar la creación y gestión de préstamos en una biblioteca utilizando un sistema de cuentas.**
 
-# 💻 Introducción
+# 📖 Introducción
 En un entorno educativo, la gestión eficiente de préstamos en una biblioteca es esencial para facilitar el acceso a recursos académicos y fomentar la cultura de la lectura. Con el objetivo de mejorar y optimizar este proceso, presentamos el proyecto "Gestor de Librería" o "Sistema de gestión de préstamos de una librería", una aplicación desarrollada en Java que busca simplificar la administración de préstamos de libros y recursos bibliográficos aplicando conceptos enseñados en nuestras clases de programación orientada a eventos y programación orientada a objetos.
 
 Este proyecto ha sido desarrollado como una herramienta interactiva y fácil de usar, diseñada para optimizar las tareas de préstamo en una biblioteca escolar. Basado en principios de programación orientada a objetos, el sistema ofrece una interfaz intuitiva que permite a los usuarios, tanto estudiantes como personal bibliotecario, realizar operaciones clave de manera eficiente.
@@ -50,6 +50,9 @@ password=Contraseña de su base de datos
 USER=Usuario del equipo administrativo
 PASSWORD=Contraseña del equipo administrativo
 ```
+
+# 💻 Arquitectura de software:
+
 
 # 🍃 Consideraciones Finales:
 
