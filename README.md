@@ -1,7 +1,9 @@
 # 📗 Gestor de Libreria
+
 > **Una aplicación para facilitar la creación y gestión de préstamos en una biblioteca utilizando un sistema de cuentas.**
 
 # 📖 Introducción
+
 En un entorno educativo, la gestión eficiente de préstamos en una biblioteca es esencial para facilitar el acceso a recursos académicos y fomentar la cultura de la lectura. Con el objetivo de mejorar y optimizar este proceso, presentamos el proyecto "Gestor de Librería" o "Sistema de gestión de préstamos de una librería", una aplicación desarrollada en Java que busca simplificar la administración de préstamos de libros y recursos bibliográficos aplicando conceptos enseñados en nuestras clases de programación orientada a eventos y programación orientada a objetos.
 
 Este proyecto ha sido desarrollado como una herramienta interactiva y fácil de usar, diseñada para optimizar las tareas de préstamo en una biblioteca escolar. Basado en principios de programación orientada a objetos, el sistema ofrece una interfaz intuitiva que permite a los usuarios, tanto estudiantes como personal bibliotecario, realizar operaciones clave de manera eficiente.
@@ -53,7 +55,20 @@ PASSWORD=Contraseña del equipo administrativo
 
 # 📄 Instrucciones
 
+**Administrador:**
+
++ Ingrese el usuario y contraseña que estén configurados en el archivo [lib.ini](https://github.com/RiothDev/Gestor-de-Libreria/blob/main/lib.ini).
+
++ Dentro del menú, seleccione la opción que esté buscando para tener acceso al menú administrativo de ese sistema.
+
+**Alumno:**
+
++ El alumno deberá crear una nueva cuenta en caso de que no cuente con una, para eso deberá llenar los campos dentro de la interfaz de "Crear cuenta", una vez sea creada la cuenta, debe llenar la información del menú principal de sesión para acceder a la interfaz de préstamos.
+
++ Una vez sea creado el préstamo, se redireccionará a la interfaz principal de sesión para que esté lista para el siguiente usuario.
+
 # 💻 Arquitectura de software
+
 + **Sistema de cuentas:**
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/2ae7b358-af08-4964-8dd2-792823f60a91)
@@ -62,6 +77,6 @@ PASSWORD=Contraseña del equipo administrativo
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/d5e490cc-4a2e-4b94-af43-9b1521b4261b)
 
-# 🍃 Consideraciones Finales
+# 🍃 Consideraciones finales
 
 Nuestro sistema de gestión de préstamos está diseñado para ofrecer una solución eficaz y práctica en el entorno académico. Este proyecto es un ejercicio práctico que pone en práctica conceptos de programación en Java y está abierto a mejoras continuas para adaptarse a las necesidades específicas de la comunidad escolar.
