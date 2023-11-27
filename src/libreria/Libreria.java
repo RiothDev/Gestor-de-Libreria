@@ -6,7 +6,7 @@ import java.io.*;
 
 public class Libreria {
     public static String[] getInformation() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("Setup.ini"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("setup.ini"))) {
             String line;
             
             String[] array = new String[3];
@@ -18,7 +18,7 @@ public class Libreria {
             return array;
             
         } catch(IOException e) {
-            System.out.println("Error al intentar conseguir la información de la base de datos.");
+            System.out.println("Error al intentar conseguir la información de setup.ini.");
             
             return new String[1];
         }

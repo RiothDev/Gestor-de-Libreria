@@ -1,5 +1,8 @@
 package libreria.UI;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import libreria.Data.LibreriaDatabaseModel;
 import java.util.*;
 import javax.swing.JOptionPane;
@@ -186,13 +189,33 @@ public class Sesion extends javax.swing.JFrame {
         return false;
     }
     
+    public static String[] getInformation() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("lib.ini"))) {
+            String line;
+            
+            String[] array = new String[2];
+            
+            for(int i = 0; (line = reader.readLine()) != null; i++) {
+                array[i] = line.split("=")[1];
+            }
+            
+            return array;
+            
+        } catch(IOException e) {
+            System.out.println("Error al intentar conseguir la información de lib.ini.");
+            
+            return new String[1];
+        }
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         String enteredUsername = jTextField1.getText();
         char[] enteredPassword = Base64.getEncoder().encodeToString(String.valueOf(jPasswordField1.getPassword()).getBytes()).toCharArray();
-
-        if (authenticateUser(enteredUsername, enteredPassword) ||  (enteredUsername.equals("admin") && new String(enteredPassword).equals("administrador"))) {
-            if (enteredUsername.equals("admin")) {
+        String[] data = getInformation();
+        
+        if (authenticateUser(enteredUsername, enteredPassword) ||  (enteredUsername.equals(data[0]) && new String(enteredPassword).equals(Base64.getEncoder().encodeToString(data[1].getBytes())))) {
+            if (enteredUsername.equals(data[0])) {
                 Menu menu = new Menu(model);
                 menu.setVisible(true);
             
