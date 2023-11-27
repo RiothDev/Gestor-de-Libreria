@@ -53,7 +53,7 @@ PASSWORD=Contraseña del equipo administrativo
 
 # 📄 Instrucciones
 
-# 💻 Arquitectura de software:
+# 💻 Arquitectura de software
 + **Sistema de cuentas:**
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/2ae7b358-af08-4964-8dd2-792823f60a91)
@@ -62,6 +62,6 @@ PASSWORD=Contraseña del equipo administrativo
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/d5e490cc-4a2e-4b94-af43-9b1521b4261b)
 
-# 🍃 Consideraciones Finales:
+# 🍃 Consideraciones Finales
 
 Nuestro sistema de gestión de préstamos está diseñado para ofrecer una solución eficaz y práctica en el entorno académico. Este proyecto es un ejercicio práctico que pone en práctica conceptos de programación en Java y está abierto a mejoras continuas para adaptarse a las necesidades específicas de la comunidad escolar.
