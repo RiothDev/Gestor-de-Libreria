@@ -51,6 +51,8 @@ USER=Usuario del equipo administrativo
 PASSWORD=Contraseña del equipo administrativo
 ```
 
+# 📄 Instrucciones
+
 # 💻 Arquitectura de software:
 + **Sistema de cuentas:**
 
@@ -59,8 +61,6 @@ PASSWORD=Contraseña del equipo administrativo
 + **Sistema de libros:**
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/71d97706-092f-4989-83f4-9b6ccbce28d2)
-
-# 📄 Instrucciones
 
 # 🍃 Consideraciones Finales:
 
