@@ -60,6 +60,8 @@ PASSWORD=Contraseña del equipo administrativo
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/71d97706-092f-4989-83f4-9b6ccbce28d2)
 
+# 📄 Instrucciones
+
 # 🍃 Consideraciones Finales:
 
 Nuestro sistema de gestión de préstamos está diseñado para ofrecer una solución eficaz y práctica en el entorno académico. Este proyecto es un ejercicio práctico que pone en práctica conceptos de programación en Java y está abierto a mejoras continuas para adaptarse a las necesidades específicas de la comunidad escolar.
