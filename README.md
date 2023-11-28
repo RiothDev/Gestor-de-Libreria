@@ -83,6 +83,12 @@ PASSWORD=Contraseña del equipo administrativo
 + Una vez sea creado el préstamo, se redireccionará a la interfaz principal de sesión para que esté lista para el siguiente usuario. El botón "encontrar libro" permitirá encontrar los libros de forma eficiente respecto a un críterio asignado por el alumno. El botón "resetear" limpiará los filtros para mostrar la base de datos completa en la tabla. El botón "Crear préstamo" creará un nuevo préstamo a nombre del alumno y el botón regresar retornará a la interfaz de sesión.
 > ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/63018815-7b6d-4a61-9e5a-3a2c8f498e9e)
 
+# Funcionalidad
+
+**Base de datos:**
+
++ Usuarios:
+> ![Untitled-2023-11-28-0914](https://github.com/RiothDev/Gestor-de-Libreria/assets/150699852/8ddf46bd-3e07-431c-ae69-7ef0bb587552)
 
 # 🌪️ Arquitectura de software
 
