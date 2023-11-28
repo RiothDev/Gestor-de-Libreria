@@ -58,14 +58,31 @@ PASSWORD=Contraseña del equipo administrativo
 **Administrador:**
 
 + Ingrese el usuario y contraseña que estén configurados en el archivo [lib.ini](https://github.com/RiothDev/Gestor-de-Libreria/blob/main/lib.ini).
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/9edda1a0-8d12-439b-a4ff-10e943b8b70d)
 
 + Dentro del menú, seleccione la opción que esté buscando para tener acceso al menú administrativo de ese sistema.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/82df8a53-df61-4639-bbeb-df674e431dd9)
+
++ En la interfaz de "libros" se encontrarán diversas opciones que facilitarán el manejo de libros en la base de datos. La opción "encontrar" permitirá renderizar resultados específicos dentro de la tabla de registros, facilitando la búsqueda en base a críterios, como el autor, nombre del libro, número del libro, etc. Para eliminar un libro, es necesario seleccionarlo dentro de la tabla principal y después presionar el botón "Remover libro". Para crear un nuevo libro necesitará presionar el botón "Crear libro" después de haber llenado todos los parámetros necesarios.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/83ccb8cf-ff2d-4918-b9ed-8d3fa88e52cb)
+
++ En la interfaz de "usuarios" se encontrarán las opciones de manejo de los usuarios registrados. El botón de "encontrar usuarios" permitirá filtrar en el contenido de la base de datos según críterios insertados por el administrador, por ejemplo, su nombre de usuario, su nombre, su número, etc. El botón "editar" permitirá realizar cambios en el usuario seleccionado en la base de datos según los cambios hechos en las entradas. El botón "remover" eliminará al usuario seleccionado de la base de datos.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/5e487cdf-0142-4443-acde-558276a8fbfb)
+
++ En la interfaz de "registros" se encuentran las opciones para el manejo de préstamos en la base de datos. La interfaz de "filtrar" ofrece filtros rápidos en los préstamos. Los préstamos expirarán una semana después de su fecha de creación automáticamente. El botón de "borrar" eliminará el préstamo seleccionado de la base de datos.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/21be804b-ad08-409d-85a2-eb5be15f91c8)
+
++ En la interfaz de "categorías" se encuentran las opciones para la gestión de categorías. Las categorías se utilizan como una forma de dividir libros. La opción "remover categoría" eliminará de la base de datos la categoría seleccionada en la lista, mientras que la opción "Crear categoría" creará una nueva categoría según los parámetros rellenados.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/7085d326-b034-4b16-a586-d14445fff7b3)
 
 **Alumno:**
 
 + El alumno deberá crear una nueva cuenta en caso de que no cuente con una, para eso deberá llenar los campos dentro de la interfaz de "Crear cuenta", una vez sea creada la cuenta, debe llenar la información del menú principal de sesión para acceder a la interfaz de préstamos.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/f84e90cf-89ff-430d-9b79-c05b4d9f8d26)
 
-+ Una vez sea creado el préstamo, se redireccionará a la interfaz principal de sesión para que esté lista para el siguiente usuario.
++ Una vez sea creado el préstamo, se redireccionará a la interfaz principal de sesión para que esté lista para el siguiente usuario. El botón "encontrar libro" permitirá encontrar los libros de forma eficiente respecto a un críterio asignado por el alumno. El botón "resetear" limpiará los filtros para mostrar la base de datos completa en la tabla. El botón "Crear préstamo" creará un nuevo préstamo a nombre del alumno y el botón regresar retornará a la interfaz de sesión.
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/63018815-7b6d-4a61-9e5a-3a2c8f498e9e)
+
 
 # 💻 Arquitectura de software
 
