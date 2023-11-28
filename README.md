@@ -53,7 +53,7 @@ USER=Usuario del equipo administrativo
 PASSWORD=Contraseña del equipo administrativo
 ```
 
-# ☔ Instrucciones
+# ☔ Instrucciones de uso
 
 **Administrador:**
 
