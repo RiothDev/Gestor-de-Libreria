@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import java.util.Map;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.LinkedHashMap;
 import java.time.format.DateTimeFormatter;
 import javax.swing.table.DefaultTableModel;
 
@@ -364,7 +365,7 @@ public class Prestamo extends javax.swing.JFrame {
     
     public boolean findBook() {
         try {
-            Map<Integer, Map<String, Object>> libros = model.getLibrosData();
+            LinkedHashMap<Integer, Map<String, Object>> libros = model.getLibrosData();
             
             for(Map<String, Object> libro : libros.values()) {
                 String titulo = (String) libro.get("titulo");
@@ -384,7 +385,7 @@ public class Prestamo extends javax.swing.JFrame {
     }
     
     public void renderLibros() {
-        Map<Integer, Map<String, Object>> libros = model.getLibrosData();
+        LinkedHashMap<Integer, Map<String, Object>> libros = model.getLibrosData();
         
         DefaultTableModel TABLE = new DefaultTableModel();
         
@@ -393,7 +394,9 @@ public class Prestamo extends javax.swing.JFrame {
         TABLE.addColumn("Categoría");
         TABLE.addColumn("No. Libro");
         
-        for (Map<String, Object> libro : libros.values()) {
+        for(Integer id : libros.keySet()) {
+            Map<String, Object> libro = libros.get(id);
+            
             String data[] = new String[4];
             
             data[0] = libro.get("titulo").toString();

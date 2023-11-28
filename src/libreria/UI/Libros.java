@@ -4,6 +4,7 @@ import java.util.Map;
 import libreria.Data.LibreriaDatabaseModel;
 import java.awt.*;
 import java.sql.*;
+import java.util.LinkedHashMap;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -449,7 +450,7 @@ public class Libros extends javax.swing.JFrame {
 
     public void renderCategorias() {
         try {
-            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM categorias");
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM categorias ORDER BY numCategoria");
             ResultSet result = statement.executeQuery();
             
             while(result.next()) {
@@ -476,7 +477,7 @@ public class Libros extends javax.swing.JFrame {
     }
     
     public void renderLibros() {
-        Map<Integer, Map<String, Object>> libros = model.getLibrosData();
+        LinkedHashMap<Integer, Map<String, Object>> libros = model.getLibrosData();
         
         DefaultTableModel TABLE = new DefaultTableModel();
         
@@ -485,7 +486,9 @@ public class Libros extends javax.swing.JFrame {
         TABLE.addColumn("Categoría");
         TABLE.addColumn("No. Libro");
         
-        for (Map<String, Object> libro : libros.values()) {
+        for(Integer id : libros.keySet()) {
+            Map<String, Object> libro = libros.get(id);
+            
             String data[] = new String[4];
             
             data[0] = libro.get("titulo").toString();

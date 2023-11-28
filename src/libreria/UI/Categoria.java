@@ -273,7 +273,7 @@ public class Categoria extends javax.swing.JFrame {
     
     public void render() {
         try {
-            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM categorias");
+            PreparedStatement statement = model.getConnection().prepareStatement("SELECT * FROM categorias ORDER BY numCategoria");
             ResultSet result = statement.executeQuery();
             
             DefaultListModel JLIST = new DefaultListModel();

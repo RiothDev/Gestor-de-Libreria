@@ -21,14 +21,14 @@ public class LibreriaDatabaseModel extends DefaultDatabaseModel {
         }
     }
 
-    public Map<Integer, Map<String, Object>> getLibrosData() {
+    public LinkedHashMap<Integer, Map<String, Object>> getLibrosData() {
         try {
             Connection connection = this.getConnection();
 
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM libros");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM libros ORDER BY noLibro ASC");
 
-            Map<Integer, Map<String, Object>> usersMap = new HashMap<>();
+            LinkedHashMap<Integer, Map<String, Object>> usersMap = new LinkedHashMap<>();
 
             while(resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -52,7 +52,7 @@ public class LibreriaDatabaseModel extends DefaultDatabaseModel {
         } catch(SQLException e) {
             System.out.println("Error al intentar conseguir los datos.");
 
-            Map<Integer, Map<String, Object>> map = new HashMap<>();
+            LinkedHashMap<Integer, Map<String, Object>> map = new LinkedHashMap<>();
             Map<String, Object> def = new HashMap<>();
 
             def.put("usuario", "Error");
