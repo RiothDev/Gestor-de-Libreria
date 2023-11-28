@@ -1,14 +1,14 @@
-# 📗 Gestor de Libreria
+# 👻 Gestor de Libreria
 
 > **Una aplicación para facilitar la creación y gestión de préstamos en una biblioteca utilizando un sistema de cuentas.**
 
-# 📖 Introducción
+# 👹 Introducción
 
 En un entorno educativo, la gestión eficiente de préstamos en una biblioteca es esencial para facilitar el acceso a recursos académicos y fomentar la cultura de la lectura. Con el objetivo de mejorar y optimizar este proceso, presentamos el proyecto "Gestor de Librería" o "Sistema de gestión de préstamos de una librería", una aplicación desarrollada en Java que busca simplificar la administración de préstamos de libros y recursos bibliográficos aplicando conceptos enseñados en nuestras clases de programación orientada a eventos y programación orientada a objetos.
 
 Este proyecto ha sido desarrollado como una herramienta interactiva y fácil de usar, diseñada para optimizar las tareas de préstamo en una biblioteca escolar. Basado en principios de programación orientada a objetos, el sistema ofrece una interfaz intuitiva que permite a los usuarios, tanto estudiantes como personal bibliotecario, realizar operaciones clave de manera eficiente.
 
-# ⚡ Características
+# 💤 Características
 
 **Características Principales:**
 
@@ -28,7 +28,7 @@ Este proyecto ha sido desarrollado como una herramienta interactiva y fácil de 
 
 + Brindar una experiencia interactiva y eficiente tanto para el personal de la biblioteca como para los usuarios, contribuyendo al fomento de la lectura y el acceso a la información.
 
-# ⚙️ Configuración
+# 🙉 Configuración
 
 **Configuración para la base de datos**
 
@@ -53,7 +53,7 @@ USER=Usuario del equipo administrativo
 PASSWORD=Contraseña del equipo administrativo
 ```
 
-# 📄 Instrucciones
+# ☠️ Instrucciones
 
 **Administrador:**
 
@@ -84,7 +84,7 @@ PASSWORD=Contraseña del equipo administrativo
 > ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/63018815-7b6d-4a61-9e5a-3a2c8f498e9e)
 
 
-# 💻 Arquitectura de software
+# 😼 Arquitectura de software
 
 + **Sistema de cuentas:**
 
