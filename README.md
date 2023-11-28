@@ -1,14 +1,14 @@
-# 📗 Gestor de Libreria
+# 🫧 Gestor de Libreria
 
 > **Una aplicación para facilitar la creación y gestión de préstamos en una biblioteca utilizando un sistema de cuentas.**
 
-# 📖 Introducción
+# 🌊 Introducción
 
 En un entorno educativo, la gestión eficiente de préstamos en una biblioteca es esencial para facilitar el acceso a recursos académicos y fomentar la cultura de la lectura. Con el objetivo de mejorar y optimizar este proceso, presentamos el proyecto "Gestor de Librería" o "Sistema de gestión de préstamos de una librería", una aplicación desarrollada en Java que busca simplificar la administración de préstamos de libros y recursos bibliográficos aplicando conceptos enseñados en nuestras clases de programación orientada a eventos y programación orientada a objetos.
 
 Este proyecto ha sido desarrollado como una herramienta interactiva y fácil de usar, diseñada para optimizar las tareas de préstamo en una biblioteca escolar. Basado en principios de programación orientada a objetos, el sistema ofrece una interfaz intuitiva que permite a los usuarios, tanto estudiantes como personal bibliotecario, realizar operaciones clave de manera eficiente.
 
-# ⚡ Características
+# 🌀 Características
 
 **Características Principales:**
 
@@ -28,7 +28,7 @@ Este proyecto ha sido desarrollado como una herramienta interactiva y fácil de 
 
 + Brindar una experiencia interactiva y eficiente tanto para el personal de la biblioteca como para los usuarios, contribuyendo al fomento de la lectura y el acceso a la información.
 
-# ⚙️ Configuración
+# 🌈 Configuración
 
 **Configuración para la base de datos**
 
@@ -53,7 +53,7 @@ USER=Usuario del equipo administrativo
 PASSWORD=Contraseña del equipo administrativo
 ```
 
-# 📄 Instrucciones
+# ☔ Instrucciones de uso
 
 **Administrador:**
 
@@ -83,8 +83,25 @@ PASSWORD=Contraseña del equipo administrativo
 + Una vez sea creado el préstamo, se redireccionará a la interfaz principal de sesión para que esté lista para el siguiente usuario. El botón "encontrar libro" permitirá encontrar los libros de forma eficiente respecto a un críterio asignado por el alumno. El botón "resetear" limpiará los filtros para mostrar la base de datos completa en la tabla. El botón "Crear préstamo" creará un nuevo préstamo a nombre del alumno y el botón regresar retornará a la interfaz de sesión.
 > ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/63018815-7b6d-4a61-9e5a-3a2c8f498e9e)
 
+# 🌵 Funcionalidad
 
-# 💻 Arquitectura de software
+**Base de datos:**
+
++ Tabla de usuarios:
+> ![Untitled-2023-11-28-0914](https://github.com/RiothDev/Gestor-de-Libreria/assets/150699852/8ddf46bd-3e07-431c-ae69-7ef0bb587552)
+
++ Tabla de prestamos:
+> ![Untitled-2023-11-28-0914(1)](https://github.com/RiothDev/Gestor-de-Libreria/assets/150699852/2af3da9d-339a-4968-8e3a-3966a2efcd6b)
+
++ Tabla de libros:
+> ![Untitled-2023-11-28-0914(5)](https://github.com/RiothDev/Gestor-de-Libreria/assets/150699852/246cbccb-50e6-49c1-be8d-aecf7adb3a0d)
+
+
++ Tabla de categorías:
+> ![Untitled-2023-11-28-0914(4)](https://github.com/RiothDev/Gestor-de-Libreria/assets/150699852/c5ac33ba-c8f7-4443-8ba4-5daa07a6e482)
+
+
+# 🌪️ Arquitectura de software
 
 + **Sistema de cuentas:**
 
@@ -94,6 +111,6 @@ PASSWORD=Contraseña del equipo administrativo
 
 ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/d5e490cc-4a2e-4b94-af43-9b1521b4261b)
 
-# 🍃 Consideraciones finales
+# 💧 Consideraciones finales
 
 Nuestro sistema de gestión de préstamos está diseñado para ofrecer una solución eficaz y práctica en el entorno académico. Este proyecto es un ejercicio práctico que pone en práctica conceptos de programación en Java y está abierto a mejoras continuas para adaptarse a las necesidades específicas de la comunidad escolar.
