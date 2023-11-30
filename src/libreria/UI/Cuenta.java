@@ -4,6 +4,7 @@ import libreria.Data.LibreriaDatabaseModel;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.Base64;
+import java.util.Map;
 
 public class Cuenta extends javax.swing.JFrame {
     protected static LibreriaDatabaseModel model;
@@ -279,31 +280,44 @@ public class Cuenta extends javax.swing.JFrame {
 
         try {
             if(validateFields()) {
-                PreparedStatement preparedStatement = model.getConnection().prepareStatement("INSERT INTO usuarios (usuario, pwd, nombre, especialidad, grado, grupo, numero, credencial) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                preparedStatement.setString(1, usernameField.getText());
-                preparedStatement.setString(2, Base64.getEncoder().encodeToString(passwordField.getText().getBytes()));
-                preparedStatement.setString(3, nombreField.getText());
-                preparedStatement.setString(4, especialidadField.getText());
-                preparedStatement.setInt(5, Character.getNumericValue(GradoYGrupoField.getText().charAt(0)));
-                preparedStatement.setString(6, Character.toString(GradoYGrupoField.getText().charAt(1)));
-                preparedStatement.setInt(7, Integer.parseInt(numField.getText()));
-                preparedStatement.setString(8, credencialField.getText());
+                Map<Integer, Map<String, Object>> users = model.getUsersData();
+                boolean exists = false;
                 
-                preparedStatement.executeUpdate();
+                for (Map<String, Object> usuario : users.values()) {
+                    if(usuario.get("usuario").toString().equals(usernameField.getText())) {
+                        exists = true;
+                        break;
+                    }
+                }
                 
-                JOptionPane.showMessageDialog(null, "La cuenta fue creada exitosamente.");
+                if(!exists) {
+                    PreparedStatement preparedStatement = model.getConnection().prepareStatement("INSERT INTO usuarios (usuario, pwd, nombre, especialidad, grado, grupo, numero, credencial) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                    preparedStatement.setString(1, usernameField.getText());
+                    preparedStatement.setString(2, Base64.getEncoder().encodeToString(passwordField.getText().getBytes()));
+                    preparedStatement.setString(3, nombreField.getText());
+                    preparedStatement.setString(4, especialidadField.getText());
+                    preparedStatement.setInt(5, Character.getNumericValue(GradoYGrupoField.getText().charAt(0)));
+                    preparedStatement.setString(6, Character.toString(GradoYGrupoField.getText().charAt(1)));
+                    preparedStatement.setInt(7, Integer.parseInt(numField.getText()));
+                    preparedStatement.setString(8, credencialField.getText());
                 
-                Sesion sesion = new Sesion(model);
-                sesion.setVisible(true);
+                    preparedStatement.executeUpdate();
                 
-                this.dispose();
+                    JOptionPane.showMessageDialog(null, "La cuenta fue creada exitosamente.");
+                    
+                    Sesion sesion = new Sesion(model);
+                    sesion.setVisible(true);
+                
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Ya existe alguien más registrado con ese usuario..");
+                }
             
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos no fueron llenados apropiadamente.");
             }
             
         } catch(Exception e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Hubo un error al intentar crear la cuenta.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
