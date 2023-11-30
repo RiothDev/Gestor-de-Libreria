@@ -64,7 +64,7 @@ PASSWORD=Contraseña del equipo administrativo
 > ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/82df8a53-df61-4639-bbeb-df674e431dd9)
 
 + En la interfaz de "libros" se encontrarán diversas opciones que facilitarán el manejo de libros en la base de datos. La opción "encontrar" permitirá renderizar resultados específicos dentro de la tabla de registros, facilitando la búsqueda en base a críterios, como el autor, nombre del libro, número del libro, etc. Para eliminar un libro, es necesario seleccionarlo dentro de la tabla principal y después presionar el botón "Remover libro". Para crear un nuevo libro necesitará presionar el botón "Crear libro" después de haber llenado todos los parámetros necesarios. El botón "editar libro" te permitirá editar el libro seleccionado para realizar correciones, pero no se permiten cambios al número del libro.
-> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/4d5cffba-3d8f-4e35-b277-e33d8f727e62)
+> ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/6727487c-6d94-44aa-8bd9-5ef965743c8d)
 
 + En la interfaz de "usuarios" se encontrarán las opciones de manejo de los usuarios registrados. El botón de "encontrar usuarios" permitirá filtrar en el contenido de la base de datos según críterios insertados por el administrador, por ejemplo, su nombre de usuario, su nombre, su número, etc. El botón "editar" permitirá realizar cambios en el usuario seleccionado en la base de datos según los cambios hechos en las entradas. El botón "remover" eliminará al usuario seleccionado de la base de datos.
 > ![image](https://github.com/RiothDev/Gestor-de-Libreria/assets/109932988/5e487cdf-0142-4443-acde-558276a8fbfb)
