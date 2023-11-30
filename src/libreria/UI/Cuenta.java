@@ -313,6 +313,7 @@ public class Cuenta extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Ya existe alguien más registrado con ese usuario..");
                 }
             
+            
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos no fueron llenados apropiadamente.");
             }
