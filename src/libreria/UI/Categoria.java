@@ -143,7 +143,7 @@ public class Categoria extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(83, 107, 116));
+        jButton3.setBackground(new java.awt.Color(103, 131, 141));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Regresar");

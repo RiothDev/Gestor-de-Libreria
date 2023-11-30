@@ -28,26 +28,26 @@ public class LibreriaDatabaseModel extends DefaultDatabaseModel {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM libros ORDER BY noLibro ASC");
 
-            LinkedHashMap<Integer, Map<String, Object>> usersMap = new LinkedHashMap<>();
+            LinkedHashMap<Integer, Map<String, Object>> librosMap = new LinkedHashMap<>();
 
             while(resultSet.next()) {
                 int id = resultSet.getInt("id");
                 
-                Map<String, Object> newUser = new HashMap<>();
-                newUser.put("autor", resultSet.getString("autor"));
-                newUser.put("titulo", resultSet.getString("titulo"));
-                newUser.put("ISBN", resultSet.getString("ISBN"));
-                newUser.put("noLibro", Integer.toString(resultSet.getInt("noLibro")));
-                newUser.put("edicion", resultSet.getString("edicion"));
-                newUser.put("cantidad", Integer.toString(resultSet.getInt("cantidad")));
-                newUser.put("prestados", Integer.toString(resultSet.getInt("prestados")));
-                newUser.put("editorial", resultSet.getString("editorial"));
-                newUser.put("categoria", resultSet.getString("categoria"));
+                Map<String, Object> newLibro = new HashMap<>();
+                newLibro.put("autor", resultSet.getString("autor"));
+                newLibro.put("titulo", resultSet.getString("titulo"));
+                newLibro.put("ISBN", resultSet.getString("ISBN"));
+                newLibro.put("noLibro", Integer.toString(resultSet.getInt("noLibro")));
+                newLibro.put("edicion", resultSet.getString("edicion"));
+                newLibro.put("cantidad", Integer.toString(resultSet.getInt("cantidad")));
+                newLibro.put("prestados", Integer.toString(resultSet.getInt("prestados")));
+                newLibro.put("editorial", resultSet.getString("editorial"));
+                newLibro.put("categoria", resultSet.getString("categoria"));
                 
-                usersMap.put(id, newUser);
+                librosMap.put(id, newLibro);
             }
 
-            return usersMap;
+            return librosMap;
 
         } catch(SQLException e) {
             System.out.println("Error al intentar conseguir los datos.");
